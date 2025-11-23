@@ -1,0 +1,6 @@
+@AgentConnect.Api_HostAddress = http://localhost:5003
+
+GET {{AgentConnect.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

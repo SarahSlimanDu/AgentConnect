@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Agents\Commands\" />
+    <Folder Include="Agents\Events\" />
+    <Folder Include="Agents\Queries\" />
+    <Folder Include="Assignments\Events\" />
+    <Folder Include="Assignments\Queries\GetAssignmentById\" />
+    <Folder Include="Assignments\Queries\GetPendingAssignments\" />
+    <Folder Include="SupportTickets\Commands\ResolveSupportTicket\" />
+    <Folder Include="SupportTickets\Queries\GetPendingSupportTickets\" />
+    <Folder Include="SupportTickets\Queries\GetSupportTicketById\" />
+    <Folder Include="Users\Commands\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="12.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+</Project>

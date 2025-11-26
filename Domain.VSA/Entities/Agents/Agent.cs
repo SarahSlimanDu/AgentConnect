@@ -1,7 +1,6 @@
-﻿
-using Domain.Enums;
+﻿using Domain.VSA.Entities.Agents.Enums;
 
-namespace Domain.Entities
+namespace Domain.VSA.Entities
 {
     public sealed class Agent 
     {

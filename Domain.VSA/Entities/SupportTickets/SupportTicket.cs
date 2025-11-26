@@ -1,7 +1,6 @@
-﻿using Domain.Core.Abstractions;
-using Domain.Enums;
+﻿using Domain.VSA.Entities.SupportTickets.Enums;
 
-namespace Domain.Entities
+namespace Domain.VSA.Entities
 {
     public sealed class SupportTicket
     {

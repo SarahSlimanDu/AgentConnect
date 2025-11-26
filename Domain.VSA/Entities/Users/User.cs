@@ -1,7 +1,5 @@
 ﻿
-using Domain.Core.Abstractions;
-
-namespace Domain.Entities
+namespace Domain.VSA.Entities
 {
     public sealed class User 
     {

@@ -1,7 +1,5 @@
 ﻿using AgentConnect.Api.Contract.SupportTickets;
-using Application.SupportTickets.Commands.AcceptSupportTicket;
-using Application.SupportTickets.Commands.CancelSupportTicket;
-using Application.SupportTickets.Commands.CreateSupportTicket;
+using Application.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -36,5 +34,6 @@ namespace AgentConnect.Api.Controllers
 
             return result.IsSuccess ? Ok() : BadRequest();
         }
+
     }
 }

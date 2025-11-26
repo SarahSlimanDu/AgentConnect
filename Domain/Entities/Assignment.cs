@@ -1,7 +1,7 @@
 ﻿
 namespace Domain.Entities
 {
-    public sealed class Assignment : BaseEntity<Guid>
+    public sealed class Assignment 
     {
         public Assignment(Guid supportTicketId, Guid agentId)
         {

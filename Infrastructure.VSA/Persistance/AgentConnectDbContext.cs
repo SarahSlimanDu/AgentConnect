@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Domain.VSA.Entities;
+using Domain.VSA.Entities.Assignments;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Persistance

@@ -35,5 +35,13 @@ namespace AgentConnect.Api.Controllers
             return result.IsSuccess ? Ok() : BadRequest();
         }
 
+        [HttpPost("reject/{ticketId}")]
+        public async Task<IActionResult> RejectSupportTicket([FromBody] CancelSupportTicketRequest request)
+        {
+            var result = await _mediator.Send(new CancelSupportTicketCommand(request.UserId, request.TicketId, request.Reason));
+
+            return result.IsSuccess ? Ok() : BadRequest();
+        }
+
     }
 }

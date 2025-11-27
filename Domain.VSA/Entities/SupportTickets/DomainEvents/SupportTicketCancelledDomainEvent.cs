@@ -1,4 +1,4 @@
-﻿using Domain.Entities;
+﻿using Domain.VSA.Entities;
 
 namespace Domain.DomainEvents
 {

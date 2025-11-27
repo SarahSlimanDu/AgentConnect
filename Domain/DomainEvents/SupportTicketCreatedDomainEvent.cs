@@ -1,9 +1,8 @@
-﻿using Domain.Core.Events;
-using Domain.Entities;
+﻿using Domain.Entities;
 
 namespace Domain.DomainEvents
 {
-    internal class SupportTicketCreatedDomainEvent : IDomainEvent
+    internal class SupportTicketCreatedDomainEvent
     {
         internal SupportTicketCreatedDomainEvent(SupportTicket supportTicket) => SupportTicket = supportTicket;
 

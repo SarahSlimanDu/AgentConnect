@@ -2,6 +2,7 @@
 using Domain.Core.Result;
 using Domain.Entities;
 using Domain.Errors;
+using Domain.Externals;
 using Domain.Repositories;
 using FluentValidation;
 using MediatR;
@@ -10,7 +11,8 @@ namespace Application.CommandHandlers
 {
     internal class CreateSupportTicketCommandHandler(ISupportTicketRepository _supportTicketRepository,
         IAgentRepository _agentRepository,
-        IValidator<CreateSupportTicketCommand> _validator) : IRequestHandler<CreateSupportTicketCommand, Result>
+        IValidator<CreateSupportTicketCommand> _validator,
+        INotificationService _notification) : IRequestHandler<CreateSupportTicketCommand, Result>
     {
         public async Task<Result> Handle(CreateSupportTicketCommand request, CancellationToken cancellationToken)
         {
@@ -33,6 +35,7 @@ namespace Application.CommandHandlers
             await _supportTicketRepository.AddAsync(supportTicket);
 
             //send Notification to the availabe agents
+            await _notification.SendNotification();
 
             return Result.Success();
         }

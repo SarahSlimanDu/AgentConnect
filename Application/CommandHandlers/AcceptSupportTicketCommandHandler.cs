@@ -16,10 +16,14 @@ namespace Application.CommandHandlers
         public async Task<Result> Handle(AcceptSupportTicketCommand request, CancellationToken cancellationToken)
         {
             //Validate the Request
-            _validator.Validate(request);
+            var validationResult = _validator.Validate(request);
+            if (!validationResult.IsValid)
+            {
+                return Result.Failure(new Error("Validation.Error", "The request failed with validation error"));
+            }
 
             //check if the Ticket Already Assigned
-           var ticket =  await _supportTicketRepository.GetTicketByIdAsync(request.ticketId);
+            var ticket =  await _supportTicketRepository.GetTicketByIdAsync(request.ticketId);
 
             if (ticket.Status == SupportTicketStatus.Assigned)
             {

@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Core\Exceptions\" />
+    <Compile Remove="Core\Exceptions\**" />
+    <EmbeddedResource Remove="Core\Exceptions\**" />
+    <None Remove="Core\Exceptions\**" />
   </ItemGroup>
 
   <ItemGroup>

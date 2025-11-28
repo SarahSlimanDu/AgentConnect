@@ -7,15 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="12.1.0" />
-    <PackageReference Include="MediatR" Version="13.1.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <Compile Remove="Features\Assignments\**" />
+    <Content Remove="Features\Assignments\**" />
+    <EmbeddedResource Remove="Features\Assignments\**" />
+    <None Remove="Features\Assignments\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Assignments\GetAssignmentById\" />
-    <Folder Include="Features\Assignments\GetPendingAssignments\" />
-    <Folder Include="Features\Agents\" />
+    <PackageReference Include="FluentValidation" Version="12.1.0" />
+    <PackageReference Include="MediatR" Version="13.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -12,7 +12,11 @@ namespace Application.SupportTickets.Commands.CreateSupportTicket
     {
         public async Task<Result> Handle(CreateSupportTicketCommand request, CancellationToken cancellationToken)
         {
-            _validator.Validate(request);   
+            var validationResult = _validator.Validate(request);
+            if (!validationResult.IsValid)
+            {
+                return Result.Failure(new Error("Validation.Error", "The request failed with validation error"));
+            }
 
 
             //check if we have available agent to handle the ticket

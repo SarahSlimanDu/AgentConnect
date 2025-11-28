@@ -10,8 +10,7 @@ namespace Application.CommandHandlers
 {
     public class AcceptSupportTicketCommandHandler(IAssignmentRepository _assignmentRepository,
                                                    ISupportTicketRepository _supportTicketRepository,
-                                                   IValidator<AcceptSupportTicketCommand> _validator
-                                                  ) : IRequestHandler<AcceptSupportTicketCommand, Result>
+                                                   IValidator<AcceptSupportTicketCommand> _validator) : IRequestHandler<AcceptSupportTicketCommand, Result>
     {
         public async Task<Result> Handle(AcceptSupportTicketCommand request, CancellationToken cancellationToken)
         {

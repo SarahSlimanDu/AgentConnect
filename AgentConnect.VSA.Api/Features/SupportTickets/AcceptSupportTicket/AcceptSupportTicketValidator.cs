@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentValidation;
 
  namespace AgentConnect.VSA.Api
 {
-    internal class AcceptSupportTicketValidator
+    internal class AcceptSupportTicketValidator : AbstractValidator<AcceptSupportTicketCommand>
     {
+        public AcceptSupportTicketValidator()
+        {
+            RuleFor(x => x.ticketId)
+          .NotEmpty().WithMessage("ticket Id Should not be empty. ");
+        }
     }
 }

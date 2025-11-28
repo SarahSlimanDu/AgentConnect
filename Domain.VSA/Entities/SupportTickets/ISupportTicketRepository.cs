@@ -2,7 +2,10 @@
 
 namespace Domain.VSA.Entities
 {
-    internal interface ISupportTicketRepository
+    public interface ISupportTicketRepository
     {
+        Task<SupportTicket> GetTicketByIdAsync(Guid ticketId);
+        Task AddAsync(SupportTicket supportTicket);
+        void Update(SupportTicket supportTicket);
     }
 }

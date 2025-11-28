@@ -14,5 +14,11 @@ namespace Domain.VSA.Entities.Assignments
         public Guid AgentId { get; private set; }
         public DateTime AssignedOn { get; private set; }
 
+        public static Assignment Create(Guid supportTicketId, Guid agentId)
+        {
+            return new Assignment(supportTicketId, agentId);
+
+        }
+
     }
 }

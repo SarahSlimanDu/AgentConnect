@@ -1,8 +1,7 @@
-﻿
-
+﻿using Application.Commands;
 using FluentValidation;
 
-namespace Application.SupportTickets.Commands.CreateSupportTicket
+namespace Application.Validators
 {
     internal class CreateSupportTicketValidator : AbstractValidator<CreateSupportTicketCommand>
     {

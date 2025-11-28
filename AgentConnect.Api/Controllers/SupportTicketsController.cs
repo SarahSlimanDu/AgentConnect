@@ -19,10 +19,10 @@ namespace AgentConnect.Api.Controllers
             return result.IsSuccess ? Ok() : BadRequest();
         }
 
-        [HttpPost("accept/{ticketId}")]
-        public async Task<IActionResult> AcceptSupportTicket([FromRoute] Guid ticketId)
+        [HttpPost("accept/{ticketId}/{agentId}")]
+        public async Task<IActionResult> AcceptSupportTicket([FromRoute] Guid ticketId, [FromRoute] Guid agentId)
         {
-            var result = await _mediator.Send(new AcceptSupportTicketCommand(ticketId));
+            var result = await _mediator.Send(new AcceptSupportTicketCommand(ticketId, agentId));
 
             return result.IsSuccess ? Ok() : BadRequest();
         }

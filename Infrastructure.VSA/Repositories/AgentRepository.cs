@@ -1,8 +1,6 @@
-﻿
-
-using Domain.VSA.Entities;
+﻿using Domain.VSA.Entities;
 using Domain.VSA.Entities.Agents;
-using Infrastructure.Persistance;
+using Infrastructure.VSA.Persistance;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.VSA.Repositories

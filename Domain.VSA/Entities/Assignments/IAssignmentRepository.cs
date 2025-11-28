@@ -1,6 +1,6 @@
-﻿using Domain.Entities;
+﻿
 
-namespace Domain.Repositories
+namespace Domain.VSA.Entities.Assignments
 {
     public interface IAssignmentRepository
     {

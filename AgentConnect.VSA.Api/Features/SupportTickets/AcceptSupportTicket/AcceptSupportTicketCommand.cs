@@ -3,6 +3,7 @@ using MediatR;
 
 namespace AgentConnect.VSA.Api
 {
-    public record AcceptSupportTicketCommand(Guid ticketId) : IRequest<Result>;
+    public record AcceptSupportTicketCommand(Guid ticketId, Guid agentId) 
+        : IRequest<Result>;
 
 }

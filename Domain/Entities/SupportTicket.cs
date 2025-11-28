@@ -5,13 +5,14 @@ namespace Domain.Entities
 {
     public sealed class SupportTicket
     {
-        public SupportTicket(Guid userId, string subject, string description,SupportTicketStatus status)
+        public SupportTicket(Guid id,Guid userId, string subject, string description,SupportTicketStatus status)
         {
             UserId = userId;
             Subject = subject;
             Description = description;
             Status = status;
         }
+        public Guid Id { get; private set; }
         public Guid UserId { get; private set; }
         public string Subject { get; private set; }
         public string Description { get; private set; }
@@ -21,7 +22,13 @@ namespace Domain.Entities
 
         public static SupportTicket Create(Guid userId, string subject, string description)
         {
-            return new SupportTicket(userId, subject, description, SupportTicketStatus.New);
+            return new SupportTicket(Guid.NewGuid(),userId, subject, description, SupportTicketStatus.New);
         }
+
+        public void ChangeStatus(SupportTicketStatus status)
+        {
+            this.Status = status;
+        }    
+    
     }
 }

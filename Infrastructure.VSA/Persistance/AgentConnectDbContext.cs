@@ -2,7 +2,7 @@
 using Domain.VSA.Entities.Assignments;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Persistance
+namespace Infrastructure.VSA.Persistance
 {
     public class AgentConnectDbContext : DbContext
     {

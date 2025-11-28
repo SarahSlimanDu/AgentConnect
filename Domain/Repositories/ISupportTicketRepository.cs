@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Entities;
 
 namespace Domain.Repositories
 {
-    internal interface ISupportTicketRepository
+    public interface ISupportTicketRepository
     {
+        Task<SupportTicket> GetTicketByIdAsync(Guid ticketId);
+        Task AddAsync(SupportTicket supportTicket);
+        void Update(SupportTicket supportTicket);
     }
 }
